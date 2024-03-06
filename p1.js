@@ -14,10 +14,13 @@ rates.forEach((rate) => {
       rate.style.background = "Orange";
       rate.style.color = "White";
       rate.innerText = rateValue;
+      rate.dataset.clicked = "true;"
       window.sessionStorage.setItem("rateValue", rateValue);
-    } else {
-      rate.removeAttribute("data-clicked");
-      rate.removeAttribute("style");
+    } else{
+        rate.style.background = "";
+        rate.style.color = ""; 
+        rate.removeAttribute('data-clicked');
+        window.sessionStorage.removeItem("rateValue");
     }
   });
 });
